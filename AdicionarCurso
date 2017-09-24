@@ -1,0 +1,127 @@
+import javax.swing.*;
+import java.awt.*;
+//import javax.swing.event.ListSelectionListener;
+
+public class AdicionarCurso extends JFrame  //implements ActionListener
+{
+   JTextField Nome, Matricula, Curso, End, In, Hr;
+   JLabel Titulo, CNome, CMatricula, CCurso, CEnd, CIn, CHr;
+   JButton Enviar;
+   DefaultListModel lista;
+   ButtonGroup Bg;
+   JList Cursos; 
+   JRadioButton Bacharel, Gestão;
+ 	
+   public AdicionarCurso ()
+   {
+      setTitle("Curso");
+      setSize(600,300);
+      setLocation(100,100);
+      setExtendedState(JFrame.MAXIMIZED_BOTH);  
+      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		
+      Titulo = new JLabel("Cadatro do Curso");
+      Titulo.setLocation(530,20);	
+      Titulo.setSize(600,60);
+      Titulo.setFont(new Font("Serif", Font.BOLD, 36));
+      
+      CMatricula = new JLabel("Código do Curso: ");
+      CMatricula.setLocation(480,120);
+      CMatricula.setSize(200,30);
+      CMatricula.setFont(new Font("Serif", Font.BOLD, 14));
+
+      Matricula = new JTextField("");
+      Matricula.setSize(400,30);
+      Matricula.setLocation(600,120);
+      Matricula.setFont(new Font("Serif", Font.BOLD, 24));
+      
+      CHr = new JLabel("Carga Horária: ");
+      CHr.setLocation(480,190);
+      CHr.setSize(200,30);
+      CHr.setFont(new Font("Serif", Font.BOLD, 14));
+
+      Hr = new JTextField("");
+      Hr.setSize(400,30);
+      Hr.setLocation(600,190);
+      Hr.setFont(new Font("Serif", Font.BOLD, 24));
+      
+      CIn = new JLabel("Código Instituto: ");
+      CIn.setLocation(480,260);
+      CIn.setSize(200,30);
+      CIn.setFont(new Font("Serif", Font.BOLD, 14));
+
+      In = new JTextField("");
+      In.setSize(400,30);
+      In.setLocation(600,260);
+      In.setFont(new Font("Serif", Font.BOLD, 24));
+
+      CNome = new JLabel("Curso: ");
+      CNome.setLocation(480,350);
+      CNome.setSize(200,30);
+      CNome.setFont(new Font("Serif", Font.BOLD, 14));
+
+      lista = new DefaultListModel();
+      lista.addElement("Administração de Empresas");
+      lista.addElement("Bio Medicina");
+      lista.addElement("Ciências Biológicas");
+      lista.addElement("Ciências da Computação");
+      lista.addElement("Direito");
+      lista.addElement("Ed. Física");
+      lista.addElement("Farmacologia");
+      lista.addElement("Redes de Computadores");
+      lista.addElement("Sistemas de Informações");
+
+      Cursos = new JList(lista);
+      Cursos.setSize(150,180);
+      Cursos.setLocation(480,380);
+      Cursos.setBackground(new Color(208,255,255));
+      //Cursos.addListSelectionListener((ListSelectionListener) this);
+ 
+      Bacharel = new JRadioButton("Bacharel", true);
+      Bacharel.setLocation(780,390);
+      Bacharel.setSize(100,90);
+      //Bacharel.addItemListener(this);
+      Bacharel.setBackground(new Color(208,255,255));
+		
+      Gestão = new JRadioButton("Gestão", false);
+      Gestão.setLocation(680,390);
+      Gestão.setSize(100,90);
+      //Gestão.addItemListener(this);
+      Gestão.setBackground(new Color(208,255,255));
+		
+      Bg = new ButtonGroup();
+      Bg.add(Bacharel);
+      Bg.add(Gestão);
+    
+      Enviar = new JButton("Enviar");
+      Enviar.setSize(100,40);
+      Enviar.setLocation(580,600);
+      Enviar.setBackground(new Color(150,220,255));
+      //Enviar.addActionListener(this);
+      Enviar.setFont(new Font("Serif", Font.BOLD, 16));      
+      Enviar.setBackground(new Color(150,220,255));
+   
+
+      getContentPane().setLayout(null);
+      getContentPane().add(Titulo);
+      getContentPane().add(CNome);
+      getContentPane().add(CMatricula);
+      getContentPane().add(Matricula);
+      getContentPane().add(Cursos);// verificar
+      getContentPane().add(CIn);
+      getContentPane().add(In);
+      getContentPane().add(CHr);
+      getContentPane().add(Hr);
+      getContentPane().add(Bacharel);
+      getContentPane().add(Gestão);
+      getContentPane().add(Enviar);
+
+   }
+   public static void main (String arg[])
+   {
+      new AdicionarCurso().setVisible(true);
+   }
+    }
+
+  
