@@ -1,0 +1,80 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class FrameLogin extends JFrame  implements ActionListener
+{
+   JTextField Nome;
+   JLabel Login, CNome, CSenha;
+   JPasswordField Senha;
+                
+   int Vezes = 0;
+		
+   public FrameLogin()
+   {
+      setTitle("Login");
+      setSize(600,300);
+      setLocation(100,100);
+      setExtendedState(JFrame.MAXIMIZED_BOTH);  
+      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		
+      Login = new JLabel("Login");
+      Login.setLocation(650,20);	
+      Login.setSize(600,60);
+      Login.setFont(new Font("Serif", Font.BOLD, 36));
+
+      CNome = new JLabel("Nome: ");
+      CNome.setLocation(480,300);
+      CNome.setSize(100,30);
+      CNome.setFont(new Font("Serif", Font.BOLD, 24));
+
+      Nome = new JTextField("");
+      Nome.setSize(280,30);
+      Nome.setLocation(580,300);
+      Nome.setFont(new Font("Serif", Font.BOLD, 24));
+
+      CSenha = new JLabel("Senha: ");
+      CSenha.setLocation(480,380);
+      CSenha.setSize(150,30);
+      CSenha.setFont(new Font("Serif", Font.BOLD, 24));
+		
+      JPasswordField Senha = new JPasswordField();
+      this.Senha = Senha ;
+      Senha.setEchoChar('*');
+      Senha.setSize(150,30);
+      Senha.setLocation(580,380);
+      Senha.addActionListener(this);
+      Senha.setFont(new Font("Serif", Font.BOLD, 24));
+
+      getContentPane().setLayout(null);
+      getContentPane().add(Login);
+      getContentPane().add(CNome);
+      getContentPane().add(CSenha);
+      getContentPane().add(Nome);
+      getContentPane().add(Senha);
+
+   }
+   public static void main (String arg[])
+   {
+      new FrameLogin().setVisible(true);
+   }
+
+   public void actionPerformed(ActionEvent e)
+   {
+      Vezes = Vezes + 1;
+
+      if((Nome.getText().equals("admin")) && (Senha.getText().equals("admin")))
+         JOptionPane.showMessageDialog(null,Nome.getText() + " ,VOCÊ ACERTOU A SENHA!");
+      else
+      {
+         if(Vezes == 3)
+         {
+            JOptionPane.showMessageDialog(null,"TENTE MAIS TARDE!");
+  	        System.exit(0);
+	     }
+         else
+	        JOptionPane.showMessageDialog(null,"SENHA ERRADA! TENTE NOVAMENTE!");
+      }
+   }
+}
