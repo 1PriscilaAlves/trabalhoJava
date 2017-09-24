@@ -1,0 +1,93 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class adicionaraluno extends JFrame  //implements ActionListener
+{
+   JTextField Nome, Matricula, Curso, End;
+   JLabel Titulo, CNome, CMatricula, CCurso, CEnd;
+   JButton Enviar;
+ 	
+   public adicionaraluno ()
+   {
+      setTitle("Aluno");
+      setSize(600,300);
+      setLocation(100,100);
+      setExtendedState(JFrame.MAXIMIZED_BOTH);  
+      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		
+      Titulo = new JLabel("Cadatro de Aluno");
+      Titulo.setLocation(530,20);	
+      Titulo.setSize(600,60);
+      Titulo.setFont(new Font("Serif", Font.BOLD, 36));
+
+      CNome = new JLabel("Nome: ");
+      CNome.setLocation(480,300);
+      CNome.setSize(100,30);
+      CNome.setFont(new Font("Serif", Font.BOLD, 24));
+
+      Nome = new JTextField("");
+      Nome.setSize(280,30);
+      Nome.setLocation(580,300);
+      Nome.setFont(new Font("Serif", Font.BOLD, 24));
+
+      CMatricula = new JLabel("RA: ");
+      CMatricula.setLocation(480,380);
+      CMatricula.setSize(100,30);
+      CMatricula.setFont(new Font("Serif", Font.BOLD, 24));
+
+      Matricula = new JTextField("");
+      Matricula.setSize(280,30);
+      Matricula.setLocation(580,380);
+      Matricula.setFont(new Font("Serif", Font.BOLD, 24));
+
+      CEnd = new JLabel("End: ");
+      CEnd.setLocation(480,460);
+      CEnd.setSize(100,30);
+      CEnd.setFont(new Font("Serif", Font.BOLD, 24));
+
+      End = new JTextField("");
+      End.setSize(280,30);
+      End.setLocation(580,460);
+      End.setFont(new Font("Serif", Font.BOLD, 24));
+      
+      
+      CCurso = new JLabel("Curso: ");
+      CCurso.setLocation(480,540);
+      CCurso.setSize(100,30);
+      CCurso.setFont(new Font("Serif", Font.BOLD, 24));
+
+      Curso = new JTextField("");
+      Curso.setSize(280,30);
+      Curso.setLocation(580,540);
+      Curso.setFont(new Font("Serif", Font.BOLD, 24));
+      
+      Enviar = new JButton("Enviar");
+      Enviar.setSize(100,40);
+      Enviar.setLocation(580,590);
+      Enviar.setBackground(new Color(150,220,255));
+      //Enviar.addActionListener(this);
+      Enviar.setFont(new Font("Serif", Font.BOLD, 16));      
+      Enviar.setBackground(new Color(150,220,255));
+   
+
+      getContentPane().setLayout(null);
+      getContentPane().add(Titulo);
+      getContentPane().add(CNome);
+      getContentPane().add(CMatricula);
+      getContentPane().add(Nome);
+      getContentPane().add(Matricula);
+      getContentPane().add(CCurso);
+      getContentPane().add(Curso);
+      getContentPane().add(CEnd);
+      getContentPane().add(End);
+      getContentPane().add(Enviar);
+
+   }
+   public static void main (String arg[])
+   {
+      new adicionaraluno().setVisible(true);
+   }
+    }
+
+  
